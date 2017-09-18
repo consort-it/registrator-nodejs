@@ -1,0 +1,23 @@
+{
+  "name": "registrator-nodejs",
+  "version": "1.0.0",
+  "description": "Registers docker containers in a consul instance",
+  "main": "registrator-nodejs.js",
+  "scripts": {
+    "start": "nodemon registrator-nodejs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ralph Göllner",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^7.0.21"
+  },
+  "dependencies": {
+    "consul": "^0.29.0",
+    "dockerode": "^2.4.3",
+    "dotenv": "^4.0.0",
+    "ip": "^1.1.5",
+    "nodemon": "^1.11.0",
+    "winston": "^2.3.1"
+  }
+}

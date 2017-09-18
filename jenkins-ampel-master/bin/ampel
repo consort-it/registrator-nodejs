@@ -1,0 +1,30 @@
+#! /usr/bin/env ruby
+# coding: utf-8
+
+require_relative '../lib/ampel'
+
+DEFAULT_OPTS = {
+  dry_run: false
+}
+
+options = DEFAULT_OPTS.clone
+
+opt_parser = OptionParser.new do |opts|
+  opts.banner = "Usage: ruby ampel.rb [OPTIONS]"
+  opts.separator  ""
+  opts.separator  "Options:"
+
+  opts.on("-d", "--dry-run", "do not switch any lights on or off") do
+    options[:dry_run] = true
+  end
+
+  opts.on("-h","--help","help") do
+    puts opt_parser
+    exit 0
+  end
+end
+
+opt_parser.parse!
+
+# finally run the code
+Ampel.new.run(options)

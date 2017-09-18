@@ -1,0 +1,1 @@
+export var logger = require('./logger-native.js');
